@@ -1,2 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Medula+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
 @import "tailwindcss";
+
+
+@theme{
+  --font-medula: 'Medula One', sans-serif;
+  --font-marcellus: 'Marcellus', serif;
+  --font-open-sans: 'Open Sans', sans-serif;
+}
 

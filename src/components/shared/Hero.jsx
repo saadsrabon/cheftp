@@ -13,9 +13,9 @@ export default function HeroSection() {
             {/* Logo */}
             <img src={logo} alt="Logo" className="w-24 h-24 mb-6" />
             {/* Tagline */}
-            <p className="text-lg font-medium text-black text-center xl:text-left">
+            {/* <p className="text-lg font-medium text-black text-center xl:text-left">
               Making people <br /> happy by way of <br /> food
-            </p>
+            </p> */}
           </div>
         </div>
 
