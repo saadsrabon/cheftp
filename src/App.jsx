@@ -1,7 +1,9 @@
 
 import './App.css'
+import AboutSection from './components/shared/About'
 import HeroSection from './components/shared/Hero'
 import Header from './components/shared/Navbar'
+import ChefWebsite from './components/shared/Other'
 
 function App() {
 
@@ -10,6 +12,8 @@ function App() {
     <>
       <Header/>
       <HeroSection/>
+      <AboutSection/>
+      <ChefWebsite/>
     </>
   )
 }

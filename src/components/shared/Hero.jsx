@@ -7,17 +7,7 @@ export default function HeroSection() {
       {/* Container */}
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row min-h-screen px-4 xl:px-0">
 
-        {/* Left Sidebar */}
-        <div className="flex flex-col items-center xl:items-start xl:justify-between xl:w-[20%] pt-10 xl:pt-16 pb-6 text-black">
-          <div className="flex flex-col items-center xl:items-start">
-            {/* Logo */}
-            <img src={logo} alt="Logo" className="w-24 h-24 mb-6" />
-            {/* Tagline */}
-            {/* <p className="text-lg font-medium text-black text-center xl:text-left">
-              Making people <br /> happy by way of <br /> food
-            </p> */}
-          </div>
-        </div>
+        
 
         {/* Hero Main Content */}
         <div className="flex-1 flex flex-col xl:flex-row items-center xl:items-start justify-between xl:pl-10 pt-10 xl:pt-16 relative z-10">
@@ -46,20 +36,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Navbar Overlay */}
-      <div className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-6 z-20">
-        {/* Links */}
-        <nav className="space-x-6 text-sm">
-          <a href="#" className="hover:underline">Home</a>
-          <a href="#" className="hover:underline">About</a>
-          <a href="#" className="hover:underline">Contact</a>
-        </nav>
-
-        {/* Button */}
-        <button className="bg-black text-white text-sm py-2 px-4 hover:bg-gray-800 transition-all">
-          Request Service
-        </button>
-      </div>
+      
     </section>
   );
 }
