@@ -1,22 +1,25 @@
 
 import './App.css'
-import AboutSection from './components/shared/About'
-import { ContactForm, RequestServicesForm } from './components/shared/Contact'
-import HeroSection from './components/shared/Hero'
-import Header from './components/shared/Navbar'
-import ChefWebsite from './components/shared/Other'
+import ContactForm from './components/shared/ContactForm'
+import Footer from './components/shared/Footer'
+import Header from './components/shared/Header'
+import Hero from './components/shared/Hero'
+import PopularFoods from './components/shared/PopularFoods'
+import RequestService from './components/shared/RequestService'
+import WhoIsChef from './components/shared/WhoIsChef'
 
 function App() {
 
 
   return (
     <>
-      <Header/>
-      <HeroSection/>
-      <AboutSection/>
-      <ChefWebsite/>
-      <ContactForm/>
-      <RequestServicesForm/>
+    <Header></Header>
+    <Hero></Hero>
+    <PopularFoods></PopularFoods>
+    <WhoIsChef></WhoIsChef>
+    <ContactForm></ContactForm>
+    <RequestService></RequestService>
+    <Footer></Footer>
     </>
   )
 }
