@@ -25,8 +25,8 @@ const Hero = () => {
     const isHovered = hovered === id;
     
     return isHovered
-      ? 'border border-black px-4 py-1 text-sm bg-black text-white transition text-left'
-      : 'px-4 py-1 text-sm transition text-left';
+      ? 'border border-black px-4 py-1  text-lg bg-black text-white transition text-left'
+      : 'px-4 py-1  text-lgtransition text-left';
   };
 
   return (
@@ -132,12 +132,12 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="w-full text-white h-[calc(100vh-176px)] flex items-center justify-center relative px-6 pt-12">
+      <section className="w-full text-white h-[calc(100vh-300px)] flex items-center justify-center relative px-6 pt-12">
         {/* Top Left Text */}
-        <div className={`absolute top-10 left-10 text-black max-w-[180px] initial-hidden ${
+        <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''
         }`}>
-          <p className="text-md leading-snug">
+          <p className="text-lg leading-snug text-left">
             Making people<br />
             happy by way of<br />
             food
