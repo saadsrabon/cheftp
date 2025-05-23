@@ -11,3 +11,7 @@
   --font-open-sans: 'Open Sans', sans-serif;
 }
 
+body{
+  scroll-behavior: smooth;
+  font-family: var(--font-marcellus);
+}

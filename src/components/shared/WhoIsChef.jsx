@@ -57,7 +57,7 @@ const WhoIsChef = () => {
     );
 
     return (
-        <section ref={sectionRef} className="bg-gray-100 overflow-hidden">
+        <section id="about" ref={sectionRef} className="bg-gray-100 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
                 <AnimatedText delay={0}>
                     <h1 className="text-4xl md:text-5xl font-marcellus text-brown-900 mb-10 relative">
