@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../assets/logo.png'
 import { AnimatePresence, motion } from 'framer-motion';
-
+import travisName from '../../assets/hori.png'
 const Header = () => {
   const [isBouncing, setIsBouncing] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,35 +87,36 @@ const Header = () => {
   }, []);
   return (
     <>
-    <header className="bg-[#C51212] flex justify-between items-center p-4 w-full">
-      <div className=" w-1/3">
-        <img src={logo} alt="Chef Travis Pena Logo" className={isBouncing ? 'animate-bounce  w-16 h-16 md:w-36 md:h-36 ' : ' w-16 h-16 md:w-36 md:h-36 '} />
+    <header className="flex justify-between items-center p-4 w-full  px-28">
+      <div className=" ">
+        <img  src={travisName} alt="Chef Travis Pena Logo" className={isBouncing ? 'w-[80%] object-fit ' : 'w-[80%]  object-fit  '} />
       </div>
 
 
-      <div className="hidden border md:flex justify-around items-center gap-6 text-black text-xl font-sans font-semibold py-2 px-2 w-1/3">
+
+      {/* <div className="hidden border md:flex justify-around items-center gap-6 text-black text-xl font-sans font-semibold py-2 px-2 w-1/3">
   <a
     href="#home"
-    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-blackafter:transition-all after:duration-300"
   >
     Home
   </a>
   <a
     href="#about"
-    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-blackafter:transition-all after:duration-300"
   >
     About
   </a>
   <a
     href="#contact"
-    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-blackafter:transition-all after:duration-300"
   >
     Contact
   </a>
-</div>
+</div> */}
 
       <div className='hidden w-1/3 md:flex justify-end'>
-        <button className="bg-[#351814] text-white px-4 py-3">Request Service</button>
+        <button className="bg-[#351814] text-white px-4 py-3 mt-22">Request Service</button>
       </div>
      <div className="md:hidden flex items-center justify-end w-1/3">
           <motion.button
@@ -142,11 +143,32 @@ const Header = () => {
             />
           </motion.button>
         </div>
+
+        
       
     </header>
 
 
-      
+      <div className="hidden border md:flex justify-start  items-center gap-6 text-black text-xl font-sans font-semibold py-2 px-2 w-full container pl-30">
+  <a
+    href="#home"
+    className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+  >
+    Home
+  </a>
+  <a
+    href="#about"
+   className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+  >
+    About
+  </a>
+  <a
+    href="#contact"
+    className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+  >
+    Contact
+  </a>
+</div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
