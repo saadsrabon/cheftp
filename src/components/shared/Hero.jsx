@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import travis from "../../assets/Travis Pena 1.png";
 import bg from "../../assets/Group 1000011749.png";
-
+import logo from "../../assets/logo.png";
 const Hero = () => {
   const [hovered, setHovered] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -173,7 +173,7 @@ const Hero = () => {
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
-            <img className="w-36 md:w-full" src={bg} alt="" />
+            <img className="w-64 md:w-full" src={logo} alt="" />
           </div>
 
           {/* Chef Image */}

@@ -60,7 +60,7 @@ const ContactForm = () => {
                         <div onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                                 <div className="space-y-2">
-                                    <label className="block text-sm sm:text-base font-medium text-stone-700">First Name</label>
+                                    <label className="block text-sm text-left sm:text-base font-medium text-stone-700">First Name</label>
                                     <input
                                         type="text"
                                         name="firstName"
@@ -70,7 +70,7 @@ const ContactForm = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="block text-sm sm:text-base font-medium text-stone-700">Last Name</label>
+                                    <label className="block text-sm sm:text-base text-left  font-medium text-stone-700">Last Name</label>
                                     <input
                                         type="text"
                                         name="lastName"
@@ -83,7 +83,7 @@ const ContactForm = () => {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                                 <div className="space-y-2">
-                                    <label className="block text-sm sm:text-base font-medium text-stone-700">Phone Number</label>
+                                    <label className="block text-sm sm:text-base font-medium text-stone-700 text-left">Phone Number</label>
                                     <input
                                         type="tel"
                                         name="phoneNumber"
@@ -93,7 +93,7 @@ const ContactForm = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="block text-sm sm:text-base font-medium text-stone-700">Email</label>
+                                    <label className="block text-sm sm:text-base font-medium text-stone-700 text-left">Email</label>
                                     <input
                                         type="email"
                                         name="email"
@@ -105,7 +105,7 @@ const ContactForm = () => {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="block text-sm sm:text-base font-medium text-stone-700">Message</label>
+                                <label className="block text-sm sm:text-base font-medium text-stone-700 text-left">Message</label>
                                 <textarea
                                     name="message"
                                     value={formData.message}
