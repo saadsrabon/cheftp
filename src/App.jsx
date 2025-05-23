@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+    <div className='container mx-auto'>
     <Header></Header>
     <Hero></Hero>
     <PopularFoods></PopularFoods>
@@ -20,6 +21,7 @@ function App() {
     <ContactForm></ContactForm>
     <RequestService></RequestService>
     <Footer></Footer>
+    </div>
     </>
   )
 }

@@ -7,7 +7,7 @@ const Footer = () => {
   const [email, setEmail] = useState('');
     
     return (
-        <footer className="bg-[#212121] text-white py-12">
+        <footer className="bg-[#212121] text-white py-12 container mx-auto">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Logo and Social */}
@@ -49,7 +49,7 @@ const Footer = () => {
                     <div className="flex flex-col items-start justify-start text-start md:items-start">
                         <h3 className="text-2xl font-marcellus mb-6">Subscribe</h3>
                         <p className="mb-4">Subscribe our newsletter to stay updated and get special offers.</p>
-                        <div className="flex w-full max-w-md">
+                        <div className="flex  ">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
@@ -57,7 +57,7 @@ const Footer = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button className="bg-[#C51212] hover:bg-red-600 text-white px-6 py-3 transition duration-300">
+                            <button className="bg-[#C51212] hover:bg-red-600 w-fit text-white px-6 py-3 transition duration-300">
                                 Subscribe
                             </button>
                         </div>
