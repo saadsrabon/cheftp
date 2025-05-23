@@ -132,12 +132,12 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="w-full text-white h-[calc(100vh-300px)] flex items-center justify-center relative px-6 pt-12">
+      <section className="w-full text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)] flex items-center justify-center relative px-6 pt-12">
         {/* Top Left Text */}
         <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''
         }`}>
-          <p className="text-lg leading-snug text-left">
+          <p className="text-lg leading-snug text-left hidden md:block">
             Making people<br />
             happy by way of<br />
             food
@@ -145,7 +145,7 @@ const Hero = () => {
         </div>
 
         {/* Top Right Navigation */}
-        <div className={`absolute top-10 right-10 text-black text-right initial-hidden ${
+        <div className={`absolute top-10 right-36 md:right-14 text-black text-right hidden md:block initial-hidden ${
           isLoaded ? 'animate-fade-in-right animate-delay-200' : ''
         }`}>
           <div className="flex flex-col gap-2">
@@ -168,12 +168,12 @@ const Hero = () => {
         </div>
 
         {/* Bottom Images Section */}
-        <div className="flex flex-col md:flex-row items-center gap-x-20 py-20 absolute -bottom-20 md:-bottom-23.5">
+        <div className="flex  md:flex-row items-center md:gap-x-0 lg:gap-x-20 md:py-20 absolute -bottom-20 md:-bottom-28.5 lg:-bottom-24">
           {/* Background Image */}
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
-            <img className="w-64 md:w-full" src={logo} alt="" />
+            <img className="w-24   md:mt-36 lg:mt-0 md:w-full" src={logo} alt="" />
           </div>
 
           {/* Chef Image */}
