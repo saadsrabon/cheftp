@@ -132,7 +132,7 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="bg-[#C51212] w-full text-white h-[calc(100vh-190px)] flex items-center justify-center relative px-6 pt-12">
+      <section className="bg-[#C51212] w-full text-white h-[calc(100vh-176px)] flex items-center justify-center relative px-6 pt-12">
         {/* Top Left Text */}
         <div className={`absolute top-10 left-10 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''

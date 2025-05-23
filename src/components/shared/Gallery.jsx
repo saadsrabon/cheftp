@@ -1,32 +1,56 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import   bruch from "../../assets/Brunch time!.jpg";
+import bruch2 from "../../assets/Brunch!.jpg";
+// import aboutLastNight from "../../assets/About last night!Pqn seared Salmon with Italian brushetta!#salmon #salmondinner #seafood #chef.jpg";
+import chikckenBreast from "../../assets/chikenbreast.jpg";
+import crab from "../../assets/crab.webp";
+import  lamb from "../../assets/lamb.jpg";
+import pork from "../../assets/pork.jpg";
+import salmon from "../../assets/salmon.webp";
+import spring from "../../assets/spring.jpg";
+// Split images into initial and additional sets
+const initialImages = [
+  { id: "1", src: crab, alt: "Gourmet Dish", category: "food" },
+  { id: "2", src: bruch, alt: "Corporate Event", category: "events" },
+  { id: "3", src: chikckenBreast, alt: "Chef Preparing Food", category: "food" },
+];
 
-const images = [
-  { id: "1", src: "/food1.jpg", alt: "Gourmet Dish", category: "food" },
-  { id: "2", src: "/event1.jpg", alt: "Corporate Event", category: "events" },
-  { id: "3", src: "/chef1.jpg", alt: "Chef Preparing Food", category: "chef" },
-  { id: "4", src: "/food2.jpg", alt: "Plated Dessert", category: "food" },
-  { id: "5", src: "/event2.jpg", alt: "Cocktail Party", category: "events" },
-  { id: "6", src: "/chef2.jpg", alt: "Cooking Demonstration", category: "chef" },
-  { id: "7", src: "/food3.jpg", alt: "Steak Dish", category: "food" },
-  { id: "8", src: "/event3.jpg", alt: "Wedding Catering", category: "events" },
-  { id: "9", src: "/event3.jpg", alt: "Wedding Catering", category: "events" },
-  { id: "10", src: "/event3.jpg", alt: "Wedding Catering", category: "events" },
+const additionalImages = [
+  { id: "4", src: lamb, alt: "Plated Dessert", category: "food" },
+  { id: "5", src: bruch2, alt: "Cocktail Party", category: "events" },
+  { id: "6", src:pork, alt: "Cooking Demonstration", category: "food" },
+  { id: "7", src: salmon, alt: "Steak Dish", category: "food" },
+  { id: "8", src: spring, alt: "Wedding Catering", category: "food" },
 ];
 
 export default function PhotoGallery() {
   const [selectedId, setSelectedId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const galleryRef = useRef(null);
   const isInView = useInView(galleryRef, { once: true, margin: "-20%" });
 
-  // Masonry layout configuration
+  // Combine images based on state
+  const displayedImages = showAll 
+    ? [...initialImages, ...additionalImages] 
+    : initialImages;
+
   const getImageHeight = (index) => {
     const heights = [300, 400, 350, 450, 380, 320, 420, 370];
     return heights[index % heights.length];
   };
 
   return (
-    <section ref={galleryRef} className="py-16 px-4 bg-gray-50">
+    <section ref={galleryRef} className="py-16 px-4 bg-gray-50 relative">
+      {/* Gradient shadow at bottom when not expanded */}
+      {!showAll && (
+        <motion.div 
+          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+        />
+      )}
+
       <div className="max-w-7xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -37,9 +61,9 @@ export default function PhotoGallery() {
           Culinary Gallery
         </motion.h2>
 
-        {/* Bento/Masonry Grid */}
+        {/* Bento Grid */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          {images.map((image, index) => (
+          {displayedImages.map((image, index) => (
             <motion.div
               key={image.id}
               layoutId={image.id}
@@ -72,13 +96,43 @@ export default function PhotoGallery() {
               />
               <motion.div className="absolute bottom-0 left-0 p-4 text-white">
                 <h3 className="text-xl font-semibold drop-shadow-lg">{image.alt}</h3>
-                <span className="text-sm bg-amber-500 px-2 py-1 rounded-full">
+                <span className="text-sm bg-red-600 px-2 py-1 rounded-full">
                   {image.category}
                 </span>
               </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {!showAll && (
+          <motion.div 
+            className="flex justify-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: isInView ? 1 : 0,
+              y: isInView ? 0 : 20
+            }}
+            transition={{ delay: 0.6 }}
+          >
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-8 py-3 bg-black hover:bg-black/80 text-white font-semibold  shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+            >
+              <span>Load More</span>
+              <motion.span
+                animate={{ y: [0, 5, 0] }}
+                transition={{ 
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                ↓
+              </motion.span>
+            </button>
+          </motion.div>
+        )}
 
         {/* Modal View */}
         <AnimatePresence>
@@ -90,7 +144,7 @@ export default function PhotoGallery() {
               exit={{ opacity: 0 }}
               onClick={() => setSelectedId(null)}
             >
-              {images.map((image) =>
+              {displayedImages.map((image) =>
                 image.id === selectedId && (
                   <motion.div
                     layoutId={selectedId}
