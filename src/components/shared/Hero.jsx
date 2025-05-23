@@ -15,16 +15,16 @@ const Hero = () => {
         <p className="text-sm">French<br />Italian</p>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-x-20 py-20 absolute -bottom-23.5 ">
+      <div className="flex flex-col md:flex-row items-center gap-x-20 py-20 absolute -bottom-20 md:-bottom-23.5 ">
         <div className="text-black">
-          <img src={bg} alt="" />
+          <img className="w-36 md:w-full" src={bg} alt="" />
         </div>
 
         <div className="relative">
           <img
             src={travis}
             alt="Chef Travis Pena"
-            className="max-w-[300px] md:max-w-[400px] xl:max-w-[500px] object-contain"
+            className="max-w-[200px] md:max-w-[400px] xl:max-w-[500px] object-contain"
           />
         </div>
       </div>
