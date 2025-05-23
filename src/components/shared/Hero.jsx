@@ -145,7 +145,7 @@ const Hero = () => {
         </div>
 
         {/* Top Right Navigation */}
-        <div className={`absolute top-10 right-36 md:right-14 text-black text-right hidden md:block initial-hidden ${
+        <div className={`absolute top-10 lg:right-28 md:right-14  text-black text-right hidden md:block initial-hidden ${
           isLoaded ? 'animate-fade-in-right animate-delay-200' : ''
         }`}>
           <div className="flex flex-col gap-2">
@@ -173,7 +173,7 @@ const Hero = () => {
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
-            <img className="w-24   md:mt-36 lg:mt-0 md:w-full" src={logo} alt="" />
+            <img className="w-24   md:mt-36  lg:mt-40 md:w-full" src={logo} alt="" />
           </div>
 
           {/* Chef Image */}
