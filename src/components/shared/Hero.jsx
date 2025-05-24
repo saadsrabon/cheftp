@@ -134,7 +134,7 @@ const Hero = () => {
 
       <section className="w-full bg-red-500 border-b-black border-b-3 text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)]  lg:h-[calc(100vh-250px)] lg: flex items-center justify-center relative px-6 pt-12 ">
         {/* Top Left Text */}
-        <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
+        {/* <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''
         }`}>
           <p className="text-lg leading-snug text-left hidden md:block">
@@ -142,7 +142,7 @@ const Hero = () => {
             happy by way of<br />
             food
           </p>
-        </div>
+        </div> */}
 
         {/* Top Right Navigation */}
         <div className={`absolute top-10 lg:right-28 md:right-14  text-black text-right hidden md:block initial-hidden ${
@@ -168,12 +168,17 @@ const Hero = () => {
         </div>
 
         {/* Bottom Images Section */}
-        <div className="flex  md:flex-row items-center md:gap-x-0 lg:gap-x-20 md:py-20 absolute -bottom-20 md:-bottom-28.5 lg:-bottom-20">
+        <div className="flex  md:flex-row items-center md:gap-x-0 lg:gap-x-46 md:py-20 absolute -bottom-20 md:-bottom-28.5 lg:-bottom-20">
           {/* Background Image */}
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
-            <img className="w-24   md:mt-36  lg:mt-5 md:w-full lg:w-64" src={logo} alt="" />
+            <img className="w-24   md:mt-36  lg:mt-5 md:w-full lg:w-72" src={logo} alt="" />
+            <p className="text-md ml-2  leading-snug text-left hidden md:block my-4">
+            Making people
+            happy by way of
+            food
+          </p>
           </div>
 
           {/* Chef Image */}
