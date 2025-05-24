@@ -5,12 +5,12 @@ import logo from '../../assets/logo.png'
 const Footer = () => {
   const [email, setEmail] = useState('');
     //function to go a section
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    // const scrollToSection = (sectionId) => {
+    //     const section = document.getElementById(sectionId);
+    //     if (section) {
+    //         section.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // };
     return (
         <footer className="bg-[#212121] border-t-red-600 border-t-2 text-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
