@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../assets/logo.png'
 import { AnimatePresence, motion } from 'framer-motion';
-import travisName from '../../assets/hori.png'
+import travisName from '../../assets/hori (2).png'
 const Header = () => {
   const [isBouncing, setIsBouncing] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,7 +87,7 @@ const Header = () => {
   }, []);
   return (
     <>
-    <header className="flex justify-between items-center p-4 w-full  px-28">
+    <header className="flex bg-black justify-between items-center p-4 w-full  px-28">
       <div className=" ">
         <img  src={travisName} alt="Chef Travis Pena Logo" className={isBouncing ? 'w-[80%] object-fit ' : 'w-[80%] md:w-[70%]  object-fit  '} />
       </div>
@@ -116,7 +116,7 @@ const Header = () => {
 </div> */}
 
       <div className='hidden w-2/3 lg:w-1/3 md:flex  justify-end'>
-        <a href="#request" className="bg-[#351814] text-white px-4 py-3 md:mt-4 lg:mt-22 cursor-pointer">Request Service</a>
+        <a href="#request" className="bg-red-600 hover:bg-red-700 text-white px-4 py-3 md:mt-4 lg:mt-22 cursor-pointer">Request Service</a>
       </div>
      <div className="md:hidden flex items-center justify-end w-1/3">
           <motion.button
@@ -149,22 +149,22 @@ const Header = () => {
     </header>
 
 
-      <div className="hidden border bg-black md:flex justify-start  items-center gap-6 text-white text-xl font-sans font-semibold py-2 px-2 w-full container pl-30 border-none">
+      <div className="hidden border bg-white md:flex justify-start  items-center gap-6 text-white text-xl font-sans font-semibold py-2 px-2 w-full container pl-30 border-none">
   <a
     href="#home"
-    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out text-black hover:text-black after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
   >
     Home
   </a>
   <a
     href="#about"
-   className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out text-black hover:text-black after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
   >
     About
   </a>
   <a
     href="#contact"
-    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
+     className="relative transition-all duration-300 ease-in-out text-black hover:text-black after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
   >
     Contact
   </a>
