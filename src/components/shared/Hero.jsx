@@ -132,7 +132,7 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="w-full bg-red-500 text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)]  lg:h-[calc(100vh-250px)] lg: flex items-center justify-center relative px-6 pt-12 ">
+      <section className="w-full bg-red-500 border-b-black border-b-3 text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)]  lg:h-[calc(100vh-250px)] lg: flex items-center justify-center relative px-6 pt-12 ">
         {/* Top Left Text */}
         <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''
@@ -173,7 +173,7 @@ const Hero = () => {
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
-            <img className="w-24   md:mt-36  lg:mt-40 md:w-full" src={logo} alt="" />
+            <img className="w-24   md:mt-36  lg:mt-5 md:w-full lg:w-64" src={logo} alt="" />
           </div>
 
           {/* Chef Image */}
