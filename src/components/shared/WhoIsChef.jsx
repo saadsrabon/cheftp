@@ -111,10 +111,10 @@ const WhoIsChef = () => {
                         </AnimatedText>
 
                         <AnimatedText delay={1200}>
-                            <button className="bg-[#351814] hover:bg-[#794841] hover:cursor-pointer text-white font-medium py-3 px-6 rounded-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 relative overflow-hidden group">
+                            <a href='#request' className="bg-[#351814] hover:bg-[#794841] hover:cursor-pointer text-white font-medium py-3 px-6 rounded-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 relative overflow-hidden group">
                                 <span className="relative z-10">Request a Service</span>
                                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                            </button>
+                            </a>
                         </AnimatedText>
                     </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+
 const RequestService = () => {
   const [formData, setFormData] = useState({
     firstName: "John",
@@ -52,7 +53,7 @@ const handleDateChange = (date) => {
   };
 
   return (
-    <div className="w-full  bg-stone-50 p-8 rounded">
+    <div id="request" className="w-full   bg-stone-50 p-8 rounded">
       <h1 className="text-center text-3xl font-medium text-stone-900 mb-6">Request a Services</h1>
       
       <form onSubmit={handleSubmit} className="space-y-6">

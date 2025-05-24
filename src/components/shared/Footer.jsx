@@ -4,7 +4,13 @@ import logo from '../../assets/logo.png'
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-    
+    //function to go a section
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
         <footer className="bg-[#212121] text-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +64,7 @@ const Footer = () => {
                         <ul className="space-y-3 text-center md:text-left">
                             <li>
                                 <a 
-                                    href="#" 
+                                    href="#services" 
                                     className="hover:text-red-600 transition-colors duration-200 text-gray-300 hover:text-red-400 inline-block py-1"
                                 >
                                     Services
@@ -66,7 +72,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a 
-                                    href="#" 
+                                    href="#about" 
                                     className="hover:text-red-600 transition-colors duration-200 text-gray-300 hover:text-red-400 inline-block py-1"
                                 >
                                     About Us
@@ -74,7 +80,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a 
-                                    href="#" 
+                                    href="#about" 
                                     className="hover:text-red-600 transition-colors duration-200 text-gray-300 hover:text-red-400 inline-block py-1"
                                 >
                                     FAQ
@@ -82,7 +88,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a 
-                                    href="#" 
+                                    href="#contact" 
                                     className="hover:text-red-600 transition-colors duration-200 text-gray-300 hover:text-red-400 inline-block py-1"
                                 >
                                     Contact Us

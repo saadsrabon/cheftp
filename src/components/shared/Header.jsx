@@ -116,7 +116,7 @@ const Header = () => {
 </div> */}
 
       <div className='hidden w-2/3 lg:w-1/3 md:flex  justify-end'>
-        <button className="bg-[#351814] text-white px-4 py-3 md:mt-4 lg:mt-22">Request Service</button>
+        <a href="#request" className="bg-[#351814] text-white px-4 py-3 md:mt-4 lg:mt-22 cursor-pointer">Request Service</a>
       </div>
      <div className="md:hidden flex items-center justify-end w-1/3">
           <motion.button
