@@ -132,7 +132,7 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="w-full text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)] flex items-center justify-center relative px-6 pt-12">
+      <section className="w-full bg-red-500 text-white h-[calc(100vh-400px)] md:h-[calc(100vh-300px)]  lg:h-[calc(100vh-250px)] lg: flex items-center justify-center relative px-6 pt-12 border border-black">
         {/* Top Left Text */}
         <div className={`absolute top-10 left-32 text-black max-w-[180px] initial-hidden ${
           isLoaded ? 'animate-fade-in-left' : ''
@@ -168,7 +168,7 @@ const Hero = () => {
         </div>
 
         {/* Bottom Images Section */}
-        <div className="flex  md:flex-row items-center md:gap-x-0 lg:gap-x-20 md:py-20 absolute -bottom-20 md:-bottom-28.5 lg:-bottom-24">
+        <div className="flex  md:flex-row items-center md:gap-x-0 lg:gap-x-20 md:py-20 absolute -bottom-20 md:-bottom-28.5 lg:-bottom-20">
           {/* Background Image */}
           <div className={`text-black initial-hidden ${
             isLoaded ? 'animate-scale-in animate-delay-600' : ''

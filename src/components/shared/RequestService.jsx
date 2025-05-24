@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const RequestService = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +10,7 @@ const RequestService = () => {
     email: "john@example.com",
     address: "4532 New Mirage Blvd, Las Vegas, NV 89191",
     totalGuests: "5",
-    eventDate: "16 June, 2025",
+     eventDate: new Date(),
     eventType: "Anniversary",
     menu: "Appetizer",
     items: {
@@ -35,6 +37,12 @@ const RequestService = () => {
         [name]: value
       }));
     }
+  };
+const handleDateChange = (date) => {
+    setFormData(prev => ({
+      ...prev,
+      eventDate: date
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -117,30 +125,20 @@ const RequestService = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
-          <div>
+        <div className="grid grid-cols-2 gap-6 items-start">
+          <div class="border-b border-stone-300">
             <label className="block text-sm text-stone-800 mb-1 text-left">Event Date</label>
-            <input
-              type="text"
-              name="eventDate"
-              value={formData.eventDate}
-              onChange={handleChange}
-              className="w-full border-b border-stone-300 pb-1 bg-transparent focus:outline-none"
+            
+            <DatePicker
+              selected={formData.eventDate}
+              onChange={handleDateChange}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              className="flex  pb-1 bg-transparent focus:outline-none text-left"
             />
           </div>
-          <div>
-            <label className="block text-sm text-stone-800 mb-1 text-left">Event Date</label>
-            <input
-              type="text"
-              name="eventDate"
-              value={formData.eventDate}
-              onChange={handleChange}
-              className="w-full border-b border-stone-300 pb-1 bg-transparent focus:outline-none"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-6">
           <div>
             <label className="block text-sm text-stone-800 mb-1 text-left">Event Type</label>
             <div className="relative">
@@ -162,68 +160,24 @@ const RequestService = () => {
                 </svg>
               </div>
             </div>
-          </div>
-          <div>
-            <label className="block text-sm text-stone-800 mb-1 text-left">Menu</label>
-            <div className="relative">
-              <select
-                name="menu"
-                value={formData.menu}
-                onChange={handleChange}
-                className="w-full border-b border-stone-300 pb-1 bg-transparent focus:outline-none appearance-none pr-8"
-              >
-                <option value="Appetizer">Appetizer</option>
-                <option value="Main Course">Main Course</option>
-                <option value="Dessert">Dessert</option>
-                <option value="Full Menu">Full Menu</option>
-              </select>
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L6 6L11 1" stroke="#4A4A4A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            {formData.eventType === "Other" && (
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="otherEventType"
+                  value={formData.otherEventType}
+                  onChange={handleChange}
+                  placeholder="Please specify event type"
+                  className="w-full border-b border-stone-300 pb-1 bg-transparent focus:outline-none"
+                />
               </div>
-            </div>
+            )}
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm text-stone-800 mb-2 text-left">Items</label>
-          <div className="space-y-2">
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="truffleMushroom"
-                name="truffleMushroom"
-                checked={formData.items.truffleMushroom}
-                onChange={handleChange}
-                className="mr-2 h-4 w-4"
-              />
-              <label htmlFor="truffleMushroom" className="text-sm text-stone-800">Truffle Mushroom Crostini</label>
-            </div>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="figTart"
-                name="figTart"
-                checked={formData.items.figTart}
-                onChange={handleChange}
-                className="mr-2 h-4 w-4"
-              />
-              <label htmlFor="figTart" className="text-sm text-stone-800">Fig and Goat Cheese Tart</label>
-            </div>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="caviar"
-                name="caviar"
-                checked={formData.items.caviar}
-                onChange={handleChange}
-                className="mr-2 h-4 w-4"
-              />
-              <label htmlFor="caviar" className="text-sm text-stone-800">Caviar and Avocado Canapé</label>
-            </div>
-          </div>
-        </div>
+        
+
+        
 
         <div className="flex justify-center mt-8">
           <button

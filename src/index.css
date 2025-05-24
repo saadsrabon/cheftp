@@ -18,4 +18,9 @@ body{
 
 input{
   text-align: left;
+  width:100%
+}
+.react-datepicker-wrapper{
+  display:flex !important;
+ 
 }

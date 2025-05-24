@@ -149,22 +149,22 @@ const Header = () => {
     </header>
 
 
-      <div className="hidden border md:flex justify-start  items-center gap-6 text-black text-xl font-sans font-semibold py-2 px-2 w-full container pl-30">
+      <div className="hidden border bg-black md:flex justify-start  items-center gap-6 text-white text-xl font-sans font-semibold py-2 px-2 w-full container pl-30 border-none">
   <a
     href="#home"
-    className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
   >
     Home
   </a>
   <a
     href="#about"
-   className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+   className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
   >
     About
   </a>
   <a
     href="#contact"
-    className="relative transition-all duration-300 ease-in-out hover:text-black/80 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
+    className="relative transition-all duration-300 ease-in-out hover:text-white after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300"
   >
     Contact
   </a>
