@@ -7,9 +7,9 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   
   const items = [
-    { label: 'American ↗', id: 'american' },
-    { label: 'French', id: 'french' },
-    { label: 'Italian', id: 'italian' },
+    { label: 'English ↗', id: 'american' },
+    { label: 'Spanish', id: 'french' },
+    // { label: 'Italian', id: 'italian' },
   ];
 
   useEffect(() => {
@@ -174,11 +174,7 @@ const Hero = () => {
             isLoaded ? 'animate-scale-in animate-delay-600' : ''
           }`}>
             <img className="w-24   md:mt-36  lg:mt-5 md:w-full lg:w-72" src={logo} alt="" />
-            <p className="text-md ml-2  leading-snug text-left hidden md:block my-4">
-            Making people
-            happy by way of
-            food
-          </p>
+            
           </div>
 
           {/* Chef Image */}
@@ -192,7 +188,13 @@ const Hero = () => {
             />
           </div>
         </div>
+        <p className="text-2xl ml-2  leading-snug text-left hidden md:block my-4 absolute bottom-0 left-10 font-bold">
+            " Making people
+            happy by way of
+            food " 
+          </p>
       </section>
+
     </>
   );
 };

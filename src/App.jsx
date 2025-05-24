@@ -18,7 +18,7 @@ function App() {
     <div className='container mx-auto'>
     <Header></Header>
     <Hero></Hero>
-    <div className='h-2 border-b-black border-b-3'></div>
+    <div className='h-4 border-b-black border-b-8'></div>
     <ServiceOffers/>
     <PopularFoods></PopularFoods>
     <WhoIsChef></WhoIsChef>

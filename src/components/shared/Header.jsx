@@ -149,7 +149,7 @@ const Header = () => {
     </header>
 
 
-      <div className="hidden border bg-white md:flex justify-start  items-center gap-6 text-white text-xl font-sans font-semibold py-2 px-2 w-full container pl-30 border-b-black border-b-2 border-t-red-600 border-t-2">
+      <div className="hidden border bg-white md:flex justify-start  items-center gap-6 text-white text-xl font-sans font-semibold py-2 px-2 w-full container pl-30 border-b-black border-b-2 border-t-red-600 border-t-8">
   <a
     href="#home"
     className="relative transition-all duration-300 ease-in-out text-black hover:text-black after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 hover:after:w-full after:bg-black after:transition-all after:duration-300"
