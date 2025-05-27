@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import Swal from 'sweetalert2';
-
+import emailjs from '@emailjs/browser';
 const ContactForm = () => {
     const [formDatas, setFormData] = useState({
         firstName: "John",
@@ -19,50 +19,48 @@ const ContactForm = () => {
         }));
     };
 
-    const handleSubmit = async(e) => {
-         const target = e.target;
-    const formData = new FormData();
-    formData.append("access_key", "8d89ab18-6fcd-424e-85c9-0e404a347850");
-    formData.append("Name", formDatas.firstName + " " + formData.lastName);
-    formData.append("Email", formDatas.email);
-    formData.append("Message", formDatas.message);
-     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-      const data = await response.json();
+        const templateParams = {
+            from_name: formDatas.firstName + ' ' + formDatas.lastName,
+            from_email: formDatas.email,
+            phone_number: formDatas.phoneNumber,
+            message: formDatas.message
+        };
 
-      if (data.success) {
-        // setData(null);
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Form Submitted Successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        e.target.reset();
-      } else {
-        Swal.fire({
-          position: "top-end",
-          icon: "error",
-          title: data.message,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "Please try again later.",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  };
+        try {
+            const result = await emailjs.send(
+                '13AoFtuwDhq08EOOLqd3E',
+                'template_ti1plvf',
+                templateParams,
+                '2ox7-3gdQnHMcDfGD'
+            );
+
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Form Submitted Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            setFormData({
+                firstName: "",
+                lastName: "",
+                phoneNumber: "",
+                email: "",
+                message: ""
+            });
+        } catch (error) {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Please try again later.",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
+    };
 
     return (
         <div id="contact" className="w-full bg-stone-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
