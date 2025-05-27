@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
+    const [formDatas, setFormData] = useState({
         firstName: "John",
         lastName: "Doe",
         phoneNumber: "+13845837498",
@@ -18,11 +19,50 @@ const ContactForm = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted:", formData);
-        // Handle form submission logic here
-    };
+    const handleSubmit = async(e) => {
+         const target = e.target;
+    const formData = new FormData();
+    formData.append("access_key", "8d89ab18-6fcd-424e-85c9-0e404a347850");
+    formData.append("Name", formDatas.firstName + " " + formData.lastName);
+    formData.append("Email", formDatas.email);
+    formData.append("Message", formDatas.message);
+     try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // setData(null);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Form Submitted Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        e.target.reset();
+      } else {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: data.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Please try again later.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
 
     return (
         <div id="contact" className="w-full bg-stone-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
@@ -64,7 +104,7 @@ const ContactForm = () => {
                                     <input
                                         type="text"
                                         name="firstName"
-                                        value={formData.firstName}
+                                        value={formDatas.firstName}
                                         onChange={handleChange}
                                         className="w-full px-0 py-3 sm:py-4 border-0 border-b border-stone-300 focus:ring-0 focus:border-stone-500 bg-transparent text-base sm:text-lg transition-colors duration-200"
                                     />
@@ -74,7 +114,7 @@ const ContactForm = () => {
                                     <input
                                         type="text"
                                         name="lastName"
-                                        value={formData.lastName}
+                                        value={formDatas.lastName}
                                         onChange={handleChange}
                                         className="w-full px-0 py-3 sm:py-4 border-0 border-b border-stone-300 focus:ring-0 focus:border-stone-500 bg-transparent text-base sm:text-lg transition-colors duration-200"
                                     />
@@ -87,7 +127,7 @@ const ContactForm = () => {
                                     <input
                                         type="tel"
                                         name="phoneNumber"
-                                        value={formData.phoneNumber}
+                                        value={formDatas.phoneNumber}
                                         onChange={handleChange}
                                         className="w-full px-0 py-3 sm:py-4 border-0 border-b border-stone-300 focus:ring-0 focus:border-stone-500 bg-transparent text-base sm:text-lg transition-colors duration-200"
                                     />
@@ -97,7 +137,7 @@ const ContactForm = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        value={formData.email}
+                                        value={formDatas.email}
                                         onChange={handleChange}
                                         className="w-full px-0 py-3 sm:py-4 border-0 border-b border-stone-300 focus:ring-0 focus:border-stone-500 bg-transparent text-base sm:text-lg transition-colors duration-200"
                                     />
@@ -108,7 +148,7 @@ const ContactForm = () => {
                                 <label className="block text-sm sm:text-base font-medium text-stone-700 text-left">Message</label>
                                 <textarea
                                     name="message"
-                                    value={formData.message}
+                                    value={formDatas.message}
                                     onChange={handleChange}
                                     rows={4}
                                     className="w-full px-0 py-3 sm:py-4 border-0 border-b border-stone-300 focus:ring-0 focus:border-stone-500 bg-transparent resize-none text-base sm:text-lg transition-colors duration-200"
