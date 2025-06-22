@@ -23,20 +23,23 @@ const ContactForm = () => {
         e.preventDefault();
 
         const templateParams = {
-            from_name: formDatas.firstName + ' ' + formDatas.lastName,
-            from_email: formDatas.email,
-            phone_number: formDatas.phoneNumber,
-            message: formDatas.message
+            user_name: formDatas.firstName + ' ' + formDatas.lastName,
+            user_email: formDatas.email,
+            user_subject: "New Contact Form Submission",
+            // phone_number: formDatas.phoneNumber,
+            user_message: formDatas.message,
+            client_logo_url: "https://cheftp.com/assets/logo-C_YKTxIx.png", // Replace with your logo URL
         };
 
         try {
             const result = await emailjs.send(
-                '13AoFtuwDhq08EOOLqd3E',
+                'service_us6o5pd',
                 'template_ti1plvf',
                 templateParams,
-                '2ox7-3gdQnHMcDfGD'
+               '2ox7-3gdQnHMcDfGD'
+                
             );
-
+  console.log("Email sent", result);
             Swal.fire({
                 position: "top-end",
                 icon: "success",
@@ -52,6 +55,7 @@ const ContactForm = () => {
                 message: ""
             });
         } catch (error) {
+            console.error("EmailJS Error", error);
             Swal.fire({
                 position: "top-end",
                 icon: "error",
@@ -95,7 +99,7 @@ const ContactForm = () => {
 
                     {/* Right side - Form */}
                     <div className="lg:w-1/2 mt-8 lg:mt-0">
-                        <div onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                        <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                                 <div className="space-y-2">
                                     <label className="block text-sm text-left sm:text-base font-medium text-stone-700">First Name</label>
@@ -156,13 +160,13 @@ const ContactForm = () => {
                             <div className="pt-6 sm:pt-8">
                                 <button
                                     type="submit"
-                                    onClick={handleSubmit}
+                                  
                                     className="bg-stone-800 hover:bg-stone-700 text-white px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-medium transition-colors duration-200 hover:cursor-pointer w-full sm:w-auto"
                                 >
                                     Submit
                                 </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
